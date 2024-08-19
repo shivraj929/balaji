@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="indexcss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="logo">
+        <img id="logoi" src="logo.png" alt="Logo">
+        <div id="name">
+            <h1>BALAJI E-MITRA &<br> COMMON SERVICE CENTER</h1>
+        </div>
+        <img id="logoe" src="emitralogo.svg" alt="eMitra Logo">
+    </div>
+    <hr>
+    <div id="content-container">
+    <div id="itemlist">
+        <div class="item" onclick="location.href='service.html';">
+            <a href="service.html">SERVICES</a>
+            <hr>
+            <a href="service.html"><img class="itemimg" src="information.png" alt="Services"></a>
+        </div>
+        <div class="item" onclick="location.href='contact.html';">
+            <a href="contact.html">CONTACT US</a>
+            <hr>
+            <a href="contact.html"><img class="itemimg" src="address-book.png" alt="Contact Us"></a>
+        </div>
+        <div class="item" onclick="location.href='address.html';">
+            <a href="address.html">ADDRESS</a>
+            <hr>
+            <a href="address.html"><img class="itemimg" src="location.png" alt="Address"></a>
+        </div>
+        <div class="item" onclick="location.href='https://docs.google.com/forms/d/1h9nUDydAmsQabRZOY2PbhREszrwACU6Kcd6wyu61l-U/edit';">
+            <a href="googleform.html">Querry/Feedback</a>
+            <hr>
+            <a href="https://docs.google.com/forms/d/1h9nUDydAmsQabRZOY2PbhREszrwACU6Kcd6wyu61l-U/edit"><img class="itemimg" src="form.png" alt="Google Form"></a>
+        </div>
+    </div>
+    <div id="news-panel">
+        <h2>Daily News & Updates</h2>
+        <div id="news-container">
+            <!-- News articles will be inserted here by JavaScript -->
+        </div>
+    </div>
+</div>
+    <hr>
+    <marquee>
+        <div id="footimg">
+            <img src="registry.png">
+            <img src="partition.png">
+            <img src="adoption.png">
+            <img src="will.webp">
+            <img src="rent.png">
+            <img src="residence.png" >
+            <img src="autho.png" >
+            <img src="gift.webp" >
+            <img src="don.png" >
+            <img src="surr.png" >
+            <img src="con.webp">
+            <img src="death.png">
+            <img src="exchange.webp">
+            <img src="property.png">
+            <img src="stamp.webp" >
+            <img src="lease.png">
+            <img src="e&w.png">
+            <img src="rev.png">
+            <img src="pasport.png">
+            <img src="janadhar.png">
+            <img src="ews.png">
+            <img src="ration.png">
+            <img src="mool.png">
+            <img src="caste.webp">
+            <img src="marriagee.png">
+            <img src="palanhar.webp">
+            <img src="income.png">
+            <img src="bill.webp">
+            <img src="pension.jpeg">
+            <img src="recruitment.png">
+            <img src="police.png">
+            <img src="pipe.png">
+            <img src="driving.webp">
+        </div>
+    </marquee>
+    <script>
+        fetch('get_news.php')
+        .then(response => response.json())
+        .then(data => {
+            const newsContainer = document.getElementById('news-container');
+            data.forEach(news => {
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+                newsItem.innerHTML = `<h3>${news.title}</h3><p>${news.content}</p><p><small>${news.date}</small></p>`;
+                newsContainer.appendChild(newsItem);
+            });
+        })
+        .catch(error => console.error('Error fetching news:', error));
+    </script>
+    <div id="foot">
+        <marquee direction="LEFT"> 
+            <h1>BALAJI E-MITRA & CSC. BALAJI E-MITRA & COMMON SERVICE CENTER. CONTACT:-7718061108 E-MAIL:-balajiemitraakola@gmail.com ADDRESS:- NEAR LAXMI VATIKA , BUS STAND , AKOLA , DISTRICT-CHITTORGARH</h1>
+        </marquee>
+    </div>
+
+</body>
+</html>
